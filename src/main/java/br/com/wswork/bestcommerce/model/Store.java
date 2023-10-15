@@ -14,7 +14,7 @@ public class Store {
   private String name;
   private String address;
   private String number;
-  private String neighbor;
+  private String neighborhood;
   private String state;
   private String city;
   private String country;
@@ -23,11 +23,12 @@ public class Store {
 
   }
 
-  public Store(String name, String address, String number, String neighbor, String state, String city, String country) {
+  public Store(String name, String address, String number, String neighborhood, String state, String city,
+      String country) {
     this.name = name;
     this.address = address;
     this.number = number;
-    this.neighbor = neighbor;
+    this.neighborhood = neighborhood;
     this.state = state;
     this.city = city;
     this.country = country;
@@ -61,12 +62,12 @@ public class Store {
     this.number = number;
   }
 
-  public String getNeighbor() {
-    return this.neighbor;
+  public String getNeighborhood() {
+    return this.neighborhood;
   }
 
-  public void setNeighbor(String neighbor) {
-    this.neighbor = neighbor;
+  public void setNeighborhood(String neighborhood) {
+    this.neighborhood = neighborhood;
   }
 
   public String getState() {
