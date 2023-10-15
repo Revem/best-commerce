@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Customer {
@@ -14,12 +15,24 @@ public class Customer {
   private String name;
   private int age;
 
+  @ManyToOne
+  private CustomerType customerType;
+
   public Customer() {
   }
 
-  public Customer(String name, int age) {
+  public Customer(String name, int age, CustomerType customerType) {
     this.name = name;
     this.age = age;
+    this.customerType = customerType;
+  }
+
+  public CustomerType getCustomerType() {
+    return this.customerType;
+  }
+
+  public void setCustomerType(CustomerType customerType) {
+    this.customerType = customerType;
   }
 
   public Long getId() {

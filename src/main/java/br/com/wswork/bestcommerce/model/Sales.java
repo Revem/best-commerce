@@ -6,6 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Sales {
@@ -16,14 +17,26 @@ public class Sales {
   private Long tax;
   private Date saleDate;
 
+  @ManyToOne
+  private Customer customer;
+
   public Sales() {
 
   }
 
-  public Sales(int price, long tax, Date saleDate) {
+  public Sales(int price, long tax, Date saleDate, Customer customer) {
     this.price = price;
     this.tax = tax;
     this.saleDate = saleDate;
+    this.customer = customer;
+  }
+
+  public Customer getCustomer() {
+    return this.customer;
+  }
+
+  public void setCustomer(Customer customer) {
+    this.customer = customer;
   }
 
   public Long getId() {
