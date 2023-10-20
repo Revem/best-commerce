@@ -1,5 +1,7 @@
 package br.com.wswork.bestcommerce.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -11,6 +13,8 @@ public class Users {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
   private String username;
+
+  @JsonIgnore
   private String password;
 
   public Users() {
